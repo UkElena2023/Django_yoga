@@ -1,0 +1,15 @@
+{% extends 'yoga/base.html' %}
+
+{% block title %}Спасибо за заявку{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-12 text-center">
+            <h1 class="zagolovok-page mb-3">Спасибо за интерес к мероприятию!</h1>
+            <p class="main-list mb-3">Я получила Вашу заявку и скоро свяжусь с Вами. Благодарю!</p>
+            <a href="{% url 'index' %}" class="btn btn-info">Вернуться на главную</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

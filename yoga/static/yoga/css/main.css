@@ -1,0 +1,163 @@
+body {
+    background-image: url("/static/yoga/img/fon2.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: light;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
+/*стили для лого и названия сайта*/
+.headImg {
+    border-radius: 50%;
+    width: 110px;
+    height: 105px;
+    border: 0px solid rgb(175, 61, 175);
+    box-shadow: 0 0 30px rgb(1, 97, 157);
+    margin-right: 20px;
+}
+.titleName {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: rgb(26, 153, 132);
+
+}
+
+.zagolovok {
+    font-family: Segoe Script;
+    font-size: 50px;
+    color: rgb(1, 97, 157);
+}
+/* стили для заголовков страниц*/
+.zagolovok-page {
+    color: rgb(3, 124, 199);
+}
+/* стили для фото преподавателя*/
+.foto-teacher {
+    width: 700px;
+    box-shadow: 0 0 30px rgb(1, 97, 157);
+    }
+/* стили для главной*/
+.main-list {
+    color: rgb(1, 97, 157);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+
+   }
+
+/* стили для горизонтального меню*/
+.fon-menu {
+    background-color: rgb(235, 249, 249);
+}
+
+/* стили для вертикального меню*/
+.navvert:hover {
+   background-color: rgb(255, 235, 211) !important;
+   color: rgb(97, 3, 118) !important;
+   font-weight: 500;
+}
+.navvert {
+    font-family: Segoe Script;
+    font-size: 25px;
+    color: rgb(1, 97, 157);
+}
+.prof {
+    font-size: 18px;
+}
+/* стили для страницы стилей йоги*/
+.styleyoga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+/* стили для страницы стилей йоги*/
+.styleyoga2 {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+
+}
+/* стили для фото стилей йоги*/
+.foto-styleyoga {
+    width: 400px;
+    box-shadow: 0 0 30px rgb(1, 97, 157);
+    }
+/* стили для изображения асаны*/
+.asana-img {
+    width: 300px;
+}
+
+/* стили для детального представления асаны*/
+.bgasanadetail {
+    background-color: rgb(235, 249, 249);
+    border: 0px solid rgb(175, 61, 175);
+    box-shadow: 0 0 30px rgb(1, 97, 157);
+}
+
+/* стили для изображения yogaevent*/
+.yogaevent-img {
+    width: 300px;
+
+}
+/*стиль для кнопок перехода */
+.btn-info {
+    background-color: rgb(1, 97, 157) !important;
+    color: white !important;
+    }
+/*стиль для кнопок пагинации */
+.pagination .page-item.active .page-link {
+    background-color: rgb(1, 97, 157) !important;
+    color: white !important;
+    border-color: rgb(1, 97, 157) !important;
+}
+
+/* фон для подложки фона под формы на страницах*/
+.bgfon {
+    background-color: rgb(235, 249, 249);
+    }
+
+/*стиль для аватарки пользователя*/
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 140px;
+    border: 4px solid rgb(1, 97, 157);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  }
+
+/*стили для погодного поисковика*/
+.info {
+    width: 200px;
+    height: 210px;
+    border: 3px solid;
+    border-color: rgb(1, 97, 157);
+    border-radius: 5px;
+    color: rgb(23, 23, 85);
+    padding-left: 10px;
+    margin-bottom: 5px;
+
+}
+.cityImg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+img {
+    size: 30px;
+}
+.textName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: rgb(97, 3, 118);
+    }
+.infoWeth {
+    color: rgb(97, 3, 118);
+}

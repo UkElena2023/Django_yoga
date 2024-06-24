@@ -1,0 +1,52 @@
+{% extends 'yoga/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="zagolovok-page">Cтили йоги</h2>
+            <h2 align="justify" class="main-list mb-4 mt-4">Сегодня йога центры предлагают большое количество различных стилей, методов и направлений йоги. В таком разнообразии
+    стилей трудно разобраться не только новичку, но даже опытному йогину. В данном разделе вы сможете найти информацию
+    по основным стилям, направлениям, которые практикуют в йога центрах России. Тем, кто сейчас
+    выбирает стиль йоги для будущей практики, советую ознакомиться с основными стилями и их особенностями.</h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/хатха1.jpeg' %}" alt="Фото хатхайога1">
+            <a href="{% url 'yoga:hathayoga' %}" class="main-list mb-4 mt-4">Хатха-йога</a>
+        </div>
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/кундалини1.jpg' %}" alt="Фото кундалини1">
+            <a href="{% url 'yoga:kundaliniyoga' %}" class="main-list mb-4 mt-4">Кундалини йога</a>
+        </div>
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/аштанга1.jpg' %}" alt="Фото аштанга1">
+             <a href="{% url 'yoga:ashtangayoga' %}" class="main-list mb-4 mt-4">Аштанга Виньяса йога</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/айенгар1.jpg' %}" alt="Фото Айенгар1">
+            <a href="{% url 'yoga:ayengaryoga' %}" class="main-list mb-4 mt-4">Айенгар йога</a>
+        </div>
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/шивананда1.jpg' %}" alt="Фото шивананда1">
+            <a href="{% url 'yoga:shivanandayoga' %}" class="main-list mb-4 mt-4">Шивананда йога</a>
+        </div>
+        <div class="col-12 col-lg-4 styleyoga">
+            <img class="img-fluid foto-styleyoga me-4 mt-4"
+                     src="{% static 'yoga/img/нидра1.jpg' %}" alt="Фото нидра1">
+            <a href="{% url 'yoga:nidrayoga' %}" class="main-list mb-4 mt-4">Йога Нидра</a>
+        </div>
+        </div>
+    </div>
+{% endblock %}

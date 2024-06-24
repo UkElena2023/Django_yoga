@@ -1,0 +1,72 @@
+{% extends "yoga/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="zagolovok-page">Каталог асан</h1>
+
+    {% comment %} форма для поиска по каталогу{% endcomment %}
+    <div class="row">
+        <div class="col-12">
+            <form action="{% url 'yoga:asanas'%}" method="get" class="mb-5 mt-3">
+
+                {% comment %}Кнопка поиска по тексту{% endcomment %}
+                <div class="mb-1 d-flex justify-content-end mb-2 mt-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Введите текст" name="search_query">
+                        <button class="btn btn-info" type="submit">Искать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+
+           <h2 align="justify" class="main-list">В каталоге вы можете найти основные асаны. Удобная поисковая система позволяет
+                осуществлять поиск асан по названию, эффекту от применения, противопоказаниям. Нажав на название асаны,
+                вы попадете на страницу подробного описания (техника выполнения, фото, эффект от применения, противопоказания.</h2><br>
+
+            {% comment %}   Paginator каталога асан {% endcomment %}
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <nav aria-label="Page navigation" class="text-dark">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item pagination">
+                                      <a class="page-link btn-info"
+                                   href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Предыдущая</a>
+
+                            </li>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                            <li class="page-item btn-info {% if page_obj.number == num %}active{% endif %}">
+                               <a class="page-link text-dark"
+                                   href="?page={{ num }}{% if search_query %}&search_query={{ search_query }}{% endif %}">{{ num }}</a>
+                            </li>
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                           <a class="page-link text-dark btn-info"
+                                                     href="?page={{ page_obj.next_page_number }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Следующая</a>
+
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+            {% for asana in asanas %}
+            {% include "yoga/include/asana_preview.html" %}
+            {% endfor %}
+                </div>
+            </div>
+</div>
+{% endblock %}

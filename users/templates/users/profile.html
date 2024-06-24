@@ -1,0 +1,27 @@
+{% extends "users/base_profile.html" %}
+{% load static %}
+
+
+{% block content_profile %}
+<div class="container">
+{% comment %} ТУТ Форма профиля {% endcomment %} 
+<h2 class="zagolovok-page mb-5">Изменение профиля</h2>
+
+{% if user.photo %}
+        <div class="text-center col-12 col-lg-9 mt-5 mb-3">
+        <img class="img-fluid profile-img" src="{{ user.photo.url }}" alt="Тут фото {{ user.username }}">
+        {% endif %}
+        </div>
+<div class="container">
+  <div class="row">
+      <div class="col-12 col-lg-9 bgfon">
+            <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-info mb-2">Сохранить</button>
+            </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'yoga/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12 col-lg-6 d-flex justify-content-center aline-items-center">
+            {% comment %} Здесь будут контакты {% endcomment%}
+                <div class="p-3">
+                <h2 class="zagolovok-page mb-5">Мои контакты</h2>
+                <img class="img-fluid foto-styleyoga me-4 mt-2" src="{% static 'yoga/img/teacher2.jpeg' %}" alt="Фото препод2">
+                <p class="main-list mt-3">Елена Московкина</p>
+                <p>Преподаватель йоги, йогатерапевт</p>
+                <p><b>Телефон:</b> <i>+7 916 1234567</i></p>
+                <p><b>Электронная почта:</b> <i>yoga@gmail.com</i></p>
+                <p><b>Телеграм-канал:</b> <a href="https://t.me/+yJKROJJPcbEOYzcy" target="СобериСвоюЙогу"><i>https://t.me/+yJKROJJPcbEOYzcy</i></a></p>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-lg-6 d-flex justify-content-center aline-items-center">
+            {% comment %} Форма для записи на мероприятие {% endcomment%}
+            <div class="p-3">
+                <h2 class="zagolovok-page mb-5">Заполните эту форму для записи на мероприятие</h2>
+                <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-info mt-3">Записаться на мероприятие</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

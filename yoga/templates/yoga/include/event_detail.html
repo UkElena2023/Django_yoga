@@ -1,0 +1,37 @@
+{% comment %} Информация о предстоящем мероприятии yoga/templates/yoga/include/event_detail.html {% endcomment %}
+
+{% comment %} здесь код для отображения текста об асане {% endcomment %}
+<div class="card mb-3 bgasanadetail">
+  <div class="row g-0">
+
+      {% comment %} здесь код изображения мероприятия {% endcomment %}
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="p-3 d-none d-md-block">
+            {% if yogaevent.image_event %}
+                <img class="img-fluid yogaevent-img" src="{{ yogaevent.image_event.url }}" alt="Тут изображение {{ yogaevent.category }}">
+            {% endif %}
+            </div>
+        </div>
+{% comment %} здесь код текста о мероприятии {% endcomment %}
+    <div class="col-md-9">
+      <div class="card-body">
+          {% comment %} здесь код для кнопок редактирования и удаления {% endcomment %}
+            {% if user == yogaevent.author or user.is_superuser %}
+            <div class="d-flex justify-content-end align-items-center mt-2">
+            <a href="{% url 'yoga:edit_yogaevent' yogaevent.pk %}" class="btn btn-info ms-3"><i class="bi bi-pencil-square"></i></a>
+            <a href="{% url 'yoga:delete_yogaevent' yogaevent.pk %}" class="btn btn-danger ms-3"><i class="bi bi-trash-fill"></i></i></a>
+            </div>
+          {% endif %}
+
+            <h4 class="card-title">{{ yogaevent.category }}</h4>
+            <p class="card-text"><u>Место проведения:</u> {{ yogaevent.place }}</p>
+            <p class="card-text"><u>Время проведения:</u> {{ yogaevent.time_event | linebreaks }}</p>
+            <p class="card-text"><u>Описание:</u> {{ yogaevent.description | linebreaks }}</p>
+      </div>
+        {% comment %} здесь код перехода на страницу обратной связи {% endcomment %}
+            <div class="d-flex justify-content-end align-items-center mt-2 mb-2 me-2">
+                <a href="{% url 'yoga:back_contact' %}" class="btn btn-info">Записаться</a>
+            </div>
+    </div>
+  </div>
+</div>

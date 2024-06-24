@@ -1,0 +1,12 @@
+{% extends "yoga/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h3 class="mb-3 d-flex align-items-center justify-content-center">Вы уверены, что хотите удалить именно это мероприятие?</h3>
+    <form method="post" class="d-flex align-items-center justify-content-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger me-2">Удалить 🗑</button>
+        <a href="{% url 'yoga:events' %}" class="btn btn-color">Отмена</a>
+    </form>
+</div>
+{% endblock %}

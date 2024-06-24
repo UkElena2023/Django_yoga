@@ -1,0 +1,40 @@
+{% comment %} Краткое представление асаны yoga/templates/yoga/include/asana_preview.html {% endcomment %}
+
+ {% comment %} здесь код для отображения текста об асане {% endcomment %}
+<div class="card mb-3 bgasanadetail">
+  <div class="row g-0">
+
+      {% comment %} здесь код изображения асаны в карточке {% endcomment %}
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="p-3 d-none d-md-block">
+            {% if asana.image %}
+                <img class="img-fluid asana-img" src="{{ asana.image.url }}" alt="Тут изображение {{ asana.title }}">
+            {% endif %}
+            </div>
+        </div>
+
+    <div class="col-md-9">
+      <div class="card-body">
+        <h4 class="card-title">{{ asana.title }}
+            {% if asana.translate %}
+                <span>({{ asana.translate }})</span>
+            {% endif %}
+        </h4>
+           <p class="card-text">✔  {{ asana.effect|truncatechars:100 }}</p>
+            <p class="card-text">❌ {{ asana.contraindication|truncatechars:100 }}</p>
+            <p class="card-text"><u>Техника выполнения:</u> {{ asana.technique | truncatechars:100 | linebreaks}}</p>
+
+
+        <div class="d-flex justify-content-start align-items-center mt-2">
+            <i class="bi bi-eye me-2"></i>{{ asana.views }}
+        </div>
+
+          {% comment %} здесь код перехода на детальное представления {% endcomment %}
+            <div class="d-flex justify-content-end align-items-center mt-2">
+                <a href="{{ asana.get_absolute_url}}" class="btn btn-info">Подробнее</a>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>
