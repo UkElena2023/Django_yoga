@@ -15,6 +15,11 @@ urlpatterns = [
     path('asanas/', views.AsanaCatalogView.as_view(), name='asanas'), # каталог асан
     path('events/', views.YogaEventCatalogView.as_view(), name='events'),  # каталог мероприятий
     path('<int:pk>/detail/', views.AsanaDetailView.as_view(), name='detail_asana_by_id'), # Детальная страница acaны по pk
+
+    # новый код
+    path('asana/<int:pk>/toggle_favorite/', views.ToggleFavoriteView.as_view(), name='toggle_favorite'),
+    #####
+
     path('<int:pk>/edit/', views.EditYogaEventUpdateView.as_view(), name='edit_yogaevent'),   # Страница с формой редактирования мероприятия
     path('<int:pk>/delete/', views.YogaEventDeleteView.as_view(), name='delete_yogaevent'),   # Страница с уведомлением об удалении мероприятия
     path('add/', views.AddYogaEventCreateView.as_view(), name='add_yogaevent'),  # добавить мероприятие

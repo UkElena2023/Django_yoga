@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
-from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView, DetailView
@@ -134,6 +135,22 @@ class AsanaDetailView(DetailView):
         # Увеличиваем счетчик просмотров на 1
         Asana.objects.filter(pk=object_view.pk).update(views=F('views') + 1)
         return object_view
+
+
+#    НОВЫЙ КОД
+class ToggleFavoriteView(LoginRequiredMixin, View):
+    """
+    Класс для добавления/удаления асаны из избранного
+    """
+    def post(self, request, pk):
+        asana = get_object_or_404(Asana, pk=pk)
+        if request.user in asana.favorites.all():
+            asana.favorites.remove(request.user)
+            is_favorite = False
+        else:
+            asana.favorites.add(request.user)
+            is_favorite = True
+        return JsonResponse({'is_favorite': is_favorite})
 
 
 class YogaEventCatalogView(ListView):
