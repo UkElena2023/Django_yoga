@@ -44,8 +44,8 @@ class LogoutUser(LogoutView):
     Класс для выхода пользователя из системы.
     """
     # Указываем путь к шаблону об успешном выхода пользователя из системы
-    # template_name = 'users/logout.html'
-    next_page = reverse_lazy('users:login')
+    template_name = 'users/logout.html'
+    # next_page = reverse_lazy('users:login')
 
 
 class RegisterUser(CreateView):
