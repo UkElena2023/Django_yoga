@@ -3,14 +3,14 @@
 
 {% block content_profile %}
 <div class="container">
-    <h2 class="zagolovok-page mb-5">Мои асаны</h2>
+    <h2 class="zagolovok-page mb-5">Мои асаны для практики</h2>
         <div class="row">
             <div class="col-12">
 
-                {% comment %} Здесь асаны, добавленные пользователем в избранное
-                {% for asana in asanas %}
-                    {% include "yoga/include/asana_preview.html" %}
-                {% endfor %}{% endcomment %}
+                {% comment %} Здесь асаны, добавленные пользователем в избранное{% endcomment %}
+            {% for asana in asanas %}
+            {% include "yoga/include/asana_preview.html" %}
+            {% endfor %}
             </div>
         </div>
     </div>

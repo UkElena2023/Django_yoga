@@ -134,7 +134,7 @@ class UserYogaEventView(ListView):
         return YogaEvent.objects.filter(author=self.request.user).order_by('-upload_date')
 
 
-class UserAsanasView(ListView):
+class UserFavoritAsanasView(ListView):
     """
     Класс для отображения асан, добавленных пользователем в избранное. Наследуется от ListView.
     Переопределяет метод get_queryset для получения мероприятий пользователя
@@ -146,9 +146,9 @@ class UserAsanasView(ListView):
 
     def get_queryset(self):
         """
-        Метод для получения мероприятий пользователя с помощью фильтра по автору и сортировки по дате загрузки
+        Метод для получения каталога асан, добавленных пользователем в избранное
         """
-        return YogaEvent.objects.filter(author=self.request.user).order_by('-upload_date')
+        return self.request.user.favorite_asanas.all().order_by('-upload_date')
 
 
 class UserProfileDeleteView(LoginRequiredMixin, DeleteView):

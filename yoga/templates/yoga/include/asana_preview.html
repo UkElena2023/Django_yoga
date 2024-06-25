@@ -25,9 +25,19 @@
             <p class="card-text"><u>Техника выполнения:</u> {{ asana.technique | truncatechars:100 | linebreaks}}</p>
 
 
-        <div class="d-flex justify-content-start align-items-center mt-2">
+        <div class="d-flex justify-content-end align-items-center mt-2">
             <i class="bi bi-eye me-2"></i>{{ asana.views }}
         </div>
+            {% if user in asana.favorites.all %}
+          <div class="d-flex justify-content-end align-items-center mt-2">
+              <p class="card-text">Убрать из избранного ❤</p>
+
+          </div>
+            {% else %}
+          <div class="d-flex justify-content-end align-items-center mt-2">
+             <p class="card-text">Добавить в избранное 🤍</p>
+              </div>
+            {% endif %}
 
           {% comment %} здесь код перехода на детальное представления {% endcomment %}
             <div class="d-flex justify-content-end align-items-center mt-2">
