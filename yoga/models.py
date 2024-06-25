@@ -12,6 +12,8 @@ class Asana(models.Model):
                               verbose_name='Изображение асаны')
     upload_date = models.DateTimeField(auto_now_add=True, db_column='UploadDate', verbose_name='Дата создания')
     views = models.IntegerField(default=0, db_column='Views', verbose_name='Просмотры')
+    favorites = models.ManyToManyField(get_user_model(), related_name='favorite_asanas', blank=True,
+                                       verbose_name='Избранное')
     author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='asanas', null=True,
                                default=None, verbose_name='Автор')
 

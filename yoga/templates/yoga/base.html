@@ -60,7 +60,7 @@
                             <hr class="dropdown-divider">
                             <form method="post" action="{% url 'users:logout' %}">
                             {% csrf_token %}
-                            <button class="btn btn-danger" type="submit">Выйти</button>
+                            <button class="btn btn-danger ms-3" type="submit">Выйти</button>
                             </form>
                             <hr class="dropdown-divider">
                             <a class="dropdown-item navvert prof" href="{% url 'users:profile_delete' %}">Удалить профиль</a>
@@ -99,8 +99,8 @@
 
 
     {% comment %} блок для дополнительных скриптов {% endcomment %}
-    <script>
+
     {%block scripts %}{% endblock %}
-    </script>
+
      </body>
 </html>

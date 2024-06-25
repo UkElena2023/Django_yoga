@@ -13,6 +13,7 @@ urlpatterns = [
 
     # остальные маршруты
     path('asanas/', views.AsanaCatalogView.as_view(), name='asanas'), # каталог асан
+    path('asana/<int:pk>/toggle_favorite/', views.ToggleFavoriteView.as_view(), name='toggle_favorite'),
     path('events/', views.YogaEventCatalogView.as_view(), name='events'),  # каталог мероприятий
     path('<int:pk>/detail/', views.AsanaDetailView.as_view(), name='detail_asana_by_id'), # Детальная страница acaны по pk
     path('<int:pk>/edit/', views.EditYogaEventUpdateView.as_view(), name='edit_yogaevent'),   # Страница с формой редактирования мероприятия

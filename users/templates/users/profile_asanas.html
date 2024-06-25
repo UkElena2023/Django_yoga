@@ -4,14 +4,42 @@
 {% block content_profile %}
 <div class="container">
     <h2 class="zagolovok-page mb-5">Мои асаны</h2>
-        <div class="row">
+            <div class="row">
             <div class="col-12">
 
-                {% comment %} Здесь асаны, добавленные пользователем в избранное
+                {% comment %} Здесь асаны, добавленные пользователем в избранное{% endcomment %}
                 {% for asana in asanas %}
                     {% include "yoga/include/asana_preview.html" %}
-                {% endfor %}{% endcomment %}
+                {% endfor %}
+
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% comment%} Вставка скрипта для работы с избранными асанами{% endcomment%}
+{%block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.toggle-favorite').forEach(button => {
+        button.addEventListener('click', async function(event) {
+            event.preventDefault();
+            const asanaId = this.getAttribute('data-asana-id');
+            const response = await fetch(`/yoga/asana/${asanaId}/toggle_favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await response.json();
+            if (data.is_favorite) {
+                this.innerHTML = '<i class="bi bi-heart-fill"></i>';
+            } else {
+                this.innerHTML = '<i class="bi bi-heart"></i>';
+            }
+        });
+    });
+});
+</script>
 {% endblock %}

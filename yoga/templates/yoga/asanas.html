@@ -26,8 +26,10 @@
         <div class="col-12">
 
            <h2 align="justify" class="main-list">В каталоге вы можете найти основные асаны. Удобная поисковая система позволяет
-                осуществлять поиск асан по названию, эффекту от применения, противопоказаниям. Нажав на название асаны,
-                вы попадете на страницу подробного описания (техника выполнения, фото, эффект от применения, противопоказания.</h2><br>
+                осуществлять поиск асан по названию, переводу с санскрита, эффекту от применения, противопоказаниям.
+               Нажав на название асаны, вы попадете на страницу подробного описания (техника выполнения, фото, эффект
+               от применения, противопоказания. Зарегистрированные пользователи могут добавлять асаны в избранное
+               и, таким образом, в профиле создать свою личную практику.</h2><br>
 
             {% comment %}   Paginator каталога асан {% endcomment %}
             <div class="row">
@@ -69,4 +71,31 @@
                 </div>
             </div>
 </div>
+{% endblock %}
+
+{% comment%} Вставка скрипта для работы с избранными асанами{% endcomment%}
+{%block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.toggle-favorite').forEach(button => {
+        button.addEventListener('click', async function(event) {
+            event.preventDefault();
+            const asanaId = this.getAttribute('data-asana-id');
+            const response = await fetch(`/yoga/asana/${asanaId}/toggle_favorite/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await response.json();
+            if (data.is_favorite) {
+                this.innerHTML = '<i class="bi bi-heart-fill"></i>';
+            } else {
+                this.innerHTML = '<i class="bi bi-heart"></i>';
+            }
+        });
+    });
+});
+</script>
 {% endblock %}
