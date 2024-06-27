@@ -134,3 +134,24 @@ main {
   }
 
 
+@media (max-width:600px) {
+    .zagolovok {
+        font-size: 43px;
+
+}
+
+    .main-list {
+        font-size: 18px;
+   }
+}
+
+@media (max-width:500px) {
+    .zagolovok {
+        font-size: 35px;
+
+}
+
+    .main-list {
+        font-size: 10px;
+   }
+}
