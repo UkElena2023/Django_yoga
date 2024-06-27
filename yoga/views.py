@@ -154,6 +154,21 @@ class YogaEventCatalogView(ListView):
     template_name = 'yoga/events.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'yogaevents'  # Имя переменной контекста, которую будем использовать в шаблоне
 
+    def get_queryset(self):
+        # Получение параметров сортировки из GET-запроса
+        sort = self.request.GET.get('sort', 'upload_date')
+        order = self.request.GET.get('order', 'desc')
+
+        # Определение направления сортировки
+        if order == 'asc':
+            order_by = sort
+        else:
+            order_by = f'-{sort}'
+
+        # Фильтрация карточек по поисковому запросу и сортировка
+        queryset = YogaEvent.objects.order_by(order_by)
+        return queryset
+
 
 class AddYogaEventCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = YogaEvent  # Указываем модель, с которой работает представление
