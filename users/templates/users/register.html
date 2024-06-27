@@ -1,8 +1,12 @@
 {% extends 'yoga/base.html' %}
 
 {% block content %}
-<h2 class="zagolovok-page">Регистрация</h2>
-<form method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <h2 class="zagolovok-page">Регистрация</h2>
+
+        <form method="post">
     {% csrf_token %}
     {% for field in form %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
@@ -19,4 +23,7 @@
     <input type="hidden" name="next" value="{{ request.GET.next }}">
     <button type="submit" class="btn btn-info mt-3">Зарегистрироваться</button>
 </form>
+          </div>
+      </div>
+    </div>
 {% endblock %}
