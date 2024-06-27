@@ -6,7 +6,7 @@
 
       {% comment %} здесь код изображения мероприятия {% endcomment %}
         <div class="col-md-3 d-flex align-items-center justify-content-center">
-            <div class="p-3 d-none d-md-block">
+            <div class="p-3">
             {% if yogaevent.image_event %}
                 <img class="img-fluid yogaevent-img" src="{{ yogaevent.image_event.url }}" alt="Тут изображение {{ yogaevent.category }}">
             {% endif %}

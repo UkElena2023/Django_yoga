@@ -12,7 +12,7 @@
           <p class="card-text">✔ {{asana.effect}}</p>
             <p class="card-text">❌ {{asana.contraindication}}</p>
             <p class="card-text"><u>Техника выполнения:</u> {{asana.technique | linebreaks}}</p>
-<!--            <div class="p-3 d-none d-md-block">-->
+
                 <div class="p-3">
             {% if asana.image %}
                 <img class="img-fluid asana-img" src="{{ asana.image.url }}" alt="Тут изображение {{ asana.title }}">
