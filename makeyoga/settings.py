@@ -34,12 +34,15 @@ if DEBUG:
 
 
 # ALLOWED_HOSTS - это список хостов, которые могут обращаться к нашему сайту
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ukelena2023-django-yoga-1f79.twc1.net', 'www.ukelena2023-django-yoga-1f79.twc1.net',
+                 'localhost', '127.0.0.1']
+
 # ALLOWED_HOSTS = ['makeyoga.ru', 'www.makeyoga.ru',
 #                  'localhost', '127.0.0.1']
 
 # CSRF_TRUSTED_ORIGINS - это список доменов, с которых можно отправлять POST-запросы без токена CSRF
-# CSRF_TRUSTED_ORIGINS = ['https://makeyoga.ru', 'https://www.makeyoga.ru']
+CSRF_TRUSTED_ORIGINS = ['https://ukelena2023-django-yoga-1f79.twc1.net', 'https://www.ukelena2023-django-yoga-1f79.twc1.net']
 
 
 
