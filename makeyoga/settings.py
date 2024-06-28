@@ -19,7 +19,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -32,19 +31,15 @@ if DEBUG:
         '127.0.0.1',
     ]
 
-
 # ALLOWED_HOSTS - это список хостов, которые могут обращаться к нашему сайту
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['ukelena2023-django-yoga-f3a5.twc1.net', 'www.ukelena2023-django-yoga-f3a5.twc1.net',
-                 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ukelena2023-django-yoga-f3a5.twc1.net', 'www.ukelena2023-django-yoga-f3a5.twc1.net', 'makeyoga.ru',
+                 'www.makeyoga.ru', 'localhost', '127.0.0.1']
 
-# ALLOWED_HOSTS = ['makeyoga.ru', 'www.makeyoga.ru',
-#                  'localhost', '127.0.0.1']
 
 # CSRF_TRUSTED_ORIGINS - это список доменов, с которых можно отправлять POST-запросы без токена CSRF
-CSRF_TRUSTED_ORIGINS = ['https://ukelena2023-django-yoga-f3a5.twc1.net', 'https://www.ukelena2023-django-yoga-f3a5.twc1.net']
-
-
+CSRF_TRUSTED_ORIGINS = ['https://ukelena2023-django-yoga-f3a5.twc1.net',
+                        'www.ukelena2023-django-yoga-f3a5.twc1.net', 'https://makeyoga.ru', 'www.makeyoga.ru']
 
 # Application definition
 
@@ -95,7 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'makeyoga.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -105,7 +99,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db_yoga.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -125,7 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -136,7 +128,6 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
