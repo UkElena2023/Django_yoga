@@ -17,7 +17,7 @@ class AsanaAdmin(admin.ModelAdmin):
     # Ordering - сортировка
     ordering = ('title',)
     # List_per_page - количество элементов на странице
-    list_per_page = 10
+    list_per_page = 5
     # Поля, которые можно редактировать
     list_editable = ('views', 'title', 'translate', 'effect', 'contraindication', 'technique')
     fields = ['views', 'title', 'translate', 'effect', 'contraindication', 'technique', 'image']
