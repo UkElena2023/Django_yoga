@@ -39,7 +39,7 @@ ALLOWED_HOSTS = ['*']
 #                  'localhost', '127.0.0.1']
 
 # CSRF_TRUSTED_ORIGINS - это список доменов, с которых можно отправлять POST-запросы без токена CSRF
-CSRF_TRUSTED_ORIGINS = ['https://makeyoga.ru', 'https://www.makeyoga.ru']
+# CSRF_TRUSTED_ORIGINS = ['https://makeyoga.ru', 'https://www.makeyoga.ru']
 
 
 
