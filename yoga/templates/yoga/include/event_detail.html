@@ -23,10 +23,10 @@
             </div>
           {% endif %}
 
-            <h4 class="card-title">{{ yogaevent.category }}</h4>
-            <p class="card-text"><u>Место проведения:</u> {{ yogaevent.place }}</p>
-            <p class="card-text"><u>Время проведения:</u> {{ yogaevent.time_event | linebreaks }}</p>
-            <p class="card-text"><u>Описание:</u> {{ yogaevent.description | linebreaks }}</p>
+            <h2 class="card-title">{{ yogaevent.category }}</h2>
+            <p class="card-text event-style"><u>Место проведения:</u> {{ yogaevent.place | linebreaks }}</p>
+            <p class="card-text event-style"><u>Время проведения:</u> {{ yogaevent.time_event | linebreaks }}</p>
+            <p class="card-text event-style"><u>Описание:</u> {{ yogaevent.description | linebreaks }}</p>
       </div>
         {% comment %} здесь код перехода на страницу обратной связи {% endcomment %}
             <div class="d-flex justify-content-end align-items-center mt-2 mb-2 me-2">

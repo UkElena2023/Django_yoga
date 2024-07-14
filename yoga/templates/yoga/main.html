@@ -5,25 +5,68 @@
     <div class="row">
 
         <div class="col-12 col-lg-6">
-            <h2 class="main-list mb-4 mt-4">Я рада приветствовать Вас на моем сайте!</h2>
-            <h2 align="justify" class="main-list mb-4">Давайте знакомиться! </h2>
-            <h2 align="justify" class="main-list mb-4">Меня зовут Елена Московкина. Я преподаватель
-                йоги, йогатерапевт, организатор выездных мероприятий с 2013 года</h2>
-            <h2 align="justify" class="main-list">
+            <p class="main-list mb-4 mt-4">Я рада приветствовать Вас на моем сайте!</p>
+            <p align="justify" class="main-list">Давайте знакомиться! </p>
+            <p align="justify" class="main-list mb-4">Меня зовут Елена Московкина. Я преподаватель
+                йоги, йогатерапевт, организатор выездных мероприятий с 2013 года.</p>
+            <p align="justify" class="main-list">
                 Каждый человек хочет быть счастливым и первый шаг к этой цели - научиться дружить со своим телом.
                 Йога - один из лучших инструментов, который поможет сохранить эту дружбу на долгие годы.
-                Мой опыт преподавания, личной практики и организация множества ярких событий
-                помогает создавать для участников незабываемые мероприятия.
-                Присоединяйтесь к семинарам, которые я провожу, и Вы найдете свой баланс в жизни. Получите новые
-                силы и энергию, почувствуете гармонию души и тела. Я приглашаю как новичков, так и опытных йогов.
-            </h2>
+                Мой опыт преподавания, личной практики и организации множества ярких событий в мире йоги помогает
+                создавать для участников незабываемые мероприятия. Присоединяйтесь к занятиям и семинарам, которые
+                я провожу, и Вы найдете свой баланс в жизни, получите новые силы и энергию, почувствуете гармонию души
+                и тела. Я приглашаю как новичков, так и опытных практиков.
+            </p>
         </div>
 
         <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
-            <img class="img-fluid foto-teacher me-4 mt-4"
+            <img class="img-fluid foto-teacher mt-4"
                  src="{% static 'yoga/img/teacher.jpg' %}" alt="Фото инструктора">
         </div>
     </div>
 </div>
 
+
+<div class="container-fluid mt-4">
+    {% comment %}Карусель сертификатов{% endcomment %}
+    <div id="carouselExample" class="carousel slide">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="{% static 'yoga/img/сертификат_3.png' %}" class="img-fluid foto-sert" alt="Сертификат3">
+                </div>
+            </div>
+            <div class="carousel-item">
+                 <div class="d-flex justify-content-center align-items-center">
+                    <img src="{% static 'yoga/img/сертификат_4.png' %}" class="img-fluid foto-sert" alt="Сертификат4">
+                </div>
+            </div>
+            <div class="carousel-item">
+                 <div class="d-flex justify-content-center align-items-center">
+                    <img src="{% static 'yoga/img/сертификат_5.png' %}" class="img-fluid foto-sert" alt="Сертификат5">
+                 </div>
+            </div>
+            <div class="carousel-item">
+                 <div class="d-flex justify-content-center align-items-center">
+                    <img src="{% static 'yoga/img/сертификат_1.png' %}" class="img-fluid foto-sert" alt="Сертификат1">
+                </div>
+            </div>
+            <div class="carousel-item">
+                 <div class="d-flex justify-content-center align-items-center">
+                    <img src="{% static 'yoga/img/сертификат_2.png' %}" class="img-fluid foto-sert2" alt="Сертификат2">
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev btn-info" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next btn-info" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+    </div>
+
+</div>
 {% endblock %}

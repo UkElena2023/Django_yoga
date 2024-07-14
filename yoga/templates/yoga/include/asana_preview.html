@@ -21,9 +21,9 @@
                 <span>({{ asana.translate }})</span>
             {% endif %}
         </h4>
-           <p class="card-text">✔  {{ asana.effect|truncatechars:100 }}</p>
-            <p class="card-text">❌ {{ asana.contraindication|truncatechars:100 }}</p>
-            <p class="card-text"><u>Техника выполнения:</u> {{ asana.technique | truncatechars:100 | linebreaks}}</p>
+           <p align="justify" class="card-text">✅ {{ asana.effect|truncatechars:100 }}</p>
+            <p align="justify" class="card-text">❌ {{ asana.contraindication|truncatechars:100 }}</p>
+            <p align="justify" class="card-text"><u>Техника выполнения:</u> {{ asana.technique|truncatechars:100|linebreaks}}</p>
 
 
         <div class="d-flex justify-content-start align-items-center mt-2">
