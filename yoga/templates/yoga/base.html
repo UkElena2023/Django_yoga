@@ -20,13 +20,13 @@
     {% comment %} Подключение иконок BS5 {% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
      {% comment %} Подключение своих стилей {% endcomment %}
-    <link rel="stylesheet" href="{% static 'yoga/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'yoga/css/style.css' %}" />
     {% block head %}{% endblock %}
 </head>
 
 <body class="container-fluid">
     <header class="mb-4">
-        <div class="container mt-3">
+        <div class="container-fluid mt-3">
             <div class="titleName justify-content-start">
                 <img class="img-fluid headImg me-4" src="{% static 'yoga/img/logo3.jpg' %}" alt="Логотип">
 
@@ -49,7 +49,7 @@
                 <div class="navbar-nav">
                     {% if user.is_authenticated %}
                     <div class="nav-item dropdown me-5">
-                        <a class="nav-link dropdown-toggle navvert" data-bs-toggle="dropdown" href="#">Профиль <i><strong>{{ user.username }}</strong></i></a>
+                        <a class="nav-link dropdown-toggle navvert me-4" data-bs-toggle="dropdown" href="#">Профиль <i><strong>{{ user.username }}</strong></i></a>
                         <div class="dropdown-menu">
                             {% if perms.yoga.add_yogaevent or user.is_superuser %}
                             <a class="dropdown-item navvert prof" href="{% url 'users:profile_events' %}">Мои мероприятия</a>
@@ -69,7 +69,7 @@
                         {% else %}
                         </div>
                     <a class="nav-link navvert" href="{% url 'users:signup' %}">Регистрация</a>
-                    <a class="nav-link ms-4 navvert" href="{% url 'users:login' %}">Вход</a>
+                    <a class="nav-link ms-4 me-4 navvert" href="{% url 'users:login' %}">Вход</a>
                         {% endif %}
                 </div>
             </div>

@@ -31,15 +31,18 @@ main {
 }
 
 .zagolovok {
-    font-family: Segoe Script, sans-serif;
+    font-family: Segoe Script, Tahoma, Geneva, Verdana, san-serif;
     font-size: 50px;
     color: rgb(1, 97, 157);
+    font-weight: bold;
 }
 /* стили для заголовков страниц*/
 .zagolovok-page {
     color: rgb(2, 80, 129);
-    font-family: Segoe UI, sans-serif;
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, serif;
+    font-style: italic;
 }
+
 /* стили для фото преподавателя*/
 .foto-teacher {
     width: 700px;
@@ -63,17 +66,14 @@ main {
 .foto-sert2:hover {
     transform: scale(1.5); /* Увеличиваем масштаб */
 }
-.carousel-control-prev-icon {
-    text-color: rgb(0, 71, 115) !important;
-    box:
-}
 
 /* стили для главной*/
 .main-list {
     color: rgb(0, 71, 115);
-    /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
     font-size: 25px;
-    font-family: Segoe UI, sans-serif;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+
    }
 
 /* стили для горизонтального меню*/
@@ -88,7 +88,7 @@ main {
    font-weight: 450;
 }
 .navvert {
-    font-family: Segoe UI, sans-serif;
+    font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
     font-size: 20px;
     color: rgb(0, 71, 115);
     font-style: italic;
@@ -135,7 +135,7 @@ main {
 p {
     color: rgb(0, 71, 115);
     font-size: 20px;
-    font-family: Segoe UI, sans-serif;
+    font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
     text-align: justify;
 }
 
