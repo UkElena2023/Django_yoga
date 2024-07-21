@@ -7,7 +7,8 @@ from .models import Asana, YogaEvent, YogaeventRequest
 @admin.register(Asana)
 class AsanaAdmin(admin.ModelAdmin):
     # Поля, которые будут отображаться в админке
-    list_display = ('id', 'title', 'translate', 'effect', 'contraindication', 'technique', 'asana_image', 'upload_date', 'views')
+    list_display = (
+        'id', 'title', 'translate', 'effect', 'contraindication', 'technique', 'asana_image', 'upload_date', 'views')
     # Поля, которые будут ссылками
     list_display_links = ('id',)
     # Поля по которым будет поиск
@@ -33,7 +34,8 @@ class AsanaAdmin(admin.ModelAdmin):
 @admin.register(YogaEvent)
 class YogaEventAdmin(admin.ModelAdmin):
     # Поля, которые будут отображаться в админке
-    list_display = ('id', 'category', 'place', 'time_event', 'description', 'yogaevent_image', 'upload_date', 'status')
+    list_display = (
+        'id', 'category', 'place', 'link_2', 'time_event', 'description', 'yogaevent_image', 'upload_date', 'status', 'link')
     # Поля, которые будут ссылками
     list_display_links = ('id',)
     # Поля по которым будет поиск
@@ -45,8 +47,8 @@ class YogaEventAdmin(admin.ModelAdmin):
     # List_per_page - количество элементов на странице
     list_per_page = 10
     # Поля, которые можно редактировать
-    list_editable = ('place', 'time_event', 'description', 'status')
-    fields = ['category', 'place', 'time_event', 'description', 'image_event', 'status']
+    list_editable = ('place', 'link_2', 'time_event', 'description', 'status', 'link')
+    fields = ['category', 'place', 'link_2', 'time_event', 'description', 'image_event', 'status', 'link']
 
     @admin.display(description="Изображение мероприятия")
     def yogaevent_image(self, yogaevent: YogaEvent):

@@ -43,9 +43,14 @@ class Category(models.Model):
 
 class YogaEvent(models.Model):
     place = models.TextField(max_length=500, db_column='Place', verbose_name='Место проведения')
+    link = models.TextField(max_length=250, default=None, blank=True, null=True, db_column='Link',
+                            verbose_name='Ссылка')
+    link_2 = models.TextField(max_length=250, default=None, blank=True, null=True, db_column='Link_2',
+                              verbose_name='Ссылка на место')
     time_event = models.TextField(max_length=500, db_column='Time_event', verbose_name='Время проведения')
     description = models.TextField(max_length=10000, db_column='Description', verbose_name='Описание')
-    image_event = models.ImageField(upload_to='yoga/images/%Y/%m/%d/', default=None, blank=True, null=True, db_column='Image_event',
+    image_event = models.ImageField(upload_to='yoga/images/%Y/%m/%d/', default=None, blank=True, null=True,
+                                    db_column='Image_event',
                                     verbose_name='Изображение мероприятия')
     upload_date = models.DateTimeField(auto_now_add=True, db_column='UploadDate', verbose_name='Дата загрузки')
     author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='yogaevents', null=True,

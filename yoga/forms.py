@@ -43,19 +43,23 @@ class YogaEventForm(forms.ModelForm):
     class Meta:
         model = YogaEvent  # Указываем модель, с которой работает форма
         # Указываем, какие поля должны присутствовать в форме и в каком порядке
-        fields = ['category', 'place', 'time_event', 'description', 'image_event', 'status']
+        fields = ['category', 'place', 'link_2', 'time_event', 'description', 'image_event', 'status', 'link']
         # Указываем виджеты для полей
         widgets = {
             'place': forms.TextInput(attrs={'class': 'form-control'}),
+            'link_2': forms.TextInput(attrs={'class': 'form-control'}),
             'time_event': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'cols': 40}),
+            'link': forms.TextInput(attrs={'class': 'form-control'}),
         }
         # Указываем метки для полей
         labels = {
             'place': 'Место проведения',
+            'link_2': 'Ссылка на место',
             'time_event': 'Время проведения',
             'description': 'Описание',
             'image_event': 'Изображение',
+            'link': 'Ссылка на доп.информацию о мероприятии',
         }
 
 

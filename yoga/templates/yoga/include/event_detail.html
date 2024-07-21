@@ -19,14 +19,25 @@
             {% if user == yogaevent.author or user.is_superuser %}
             <div class="d-flex justify-content-end align-items-center mt-2">
             <a href="{% url 'yoga:edit_yogaevent' yogaevent.pk %}" class="btn btn-info ms-3"><i class="bi bi-pencil-square"></i></a>
-            <a href="{% url 'yoga:delete_yogaevent' yogaevent.pk %}" class="btn btn-danger ms-3"><i class="bi bi-trash-fill"></i></i></a>
+            <a href="{% url 'yoga:delete_yogaevent' yogaevent.pk %}" class="btn btn-danger ms-3"><i class="bi bi-trash-fill"></i></a>
             </div>
           {% endif %}
 
             <h1 align="end" class="card-title zagolovok-page">{{ yogaevent.category }}</h1>
-            <p class="card-text event-style"><u>Место проведения:</u> {{ yogaevent.place | linebreaks }}</p>
-            <p class="card-text event-style"><u>Время проведения:</u> {{ yogaevent.time_event | linebreaks }}</p>
-            <p class="card-text event-style"><u>Описание:</u> {{ yogaevent.description | linebreaks }}</p>
+            <p class="card-text"><u>Место проведения:</u> {{ yogaevent.place | linebreaks }}</p>
+
+            {% if yogaevent.link_2 %}
+                <p class="card-text fst-italic"><a href="{{yogaevent.link_2}}" target="dop_info_plase" class="text-decoration-none">Дополнительная информация о месте  👉</a></p>
+            {% endif %}
+
+            <p class="card-text"><u>Время проведения:</u> {{ yogaevent.time_event | linebreaks }}</p>
+            <p class="card-text"><u>Описание:</u> {{ yogaevent.description | linebreaks }}</p>
+
+          {% if yogaevent.link %}
+                <p class="card-text fst-italic">
+                    <a href="{{yogaevent.link}}" target="dop_info_event" class="text-decoration-none">Дополнительная информация о мероприятии  👉</a>
+                </p>
+            {% endif %}
       </div>
         {% comment %} здесь код перехода на страницу обратной связи {% endcomment %}
             <div class="d-flex justify-content-end align-items-center mt-2 mb-2 me-2">
