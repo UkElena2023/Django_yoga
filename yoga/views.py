@@ -118,7 +118,7 @@ class HealthBreathView(ListView):
 class HealthNutritionView(ListView):
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_nutrition.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'healthes_nutrition'  # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
     extra_context = {'title': 'Заметки о питании'}  # Дополнительный контекст для передачи в шаблон
 
@@ -145,7 +145,7 @@ class HealthNutritionView(ListView):
 class HealthAyurvedaView(ListView):
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_ayurveda.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'healthes_ayurveda'  # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
     extra_context = {'title': 'Заметки об аюрведе'}  # Дополнительный контекст для передачи в шаблон
 
@@ -172,7 +172,7 @@ class HealthAyurvedaView(ListView):
 class HealthYogatherapyView(ListView):
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_yogatherapy.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'healthes_yogatherapy'  # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
     extra_context = {'title': 'Заметки о йогатерапии'}  # Дополнительный контекст для передачи в шаблон
 
@@ -199,7 +199,7 @@ class HealthYogatherapyView(ListView):
 class HealthPurificationView(ListView):
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_purification.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'healthes_purification'  # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
     extra_context = {'title': 'Заметки об очищении'}  # Дополнительный контекст для передачи в шаблон
 
