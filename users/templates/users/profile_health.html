@@ -1,0 +1,25 @@
+{% extends "users/base_profile.html" %}
+{% load static %}
+{% block content_profile %}
+
+<div class="container">
+    <h2 class="zagolovok-page mb-5">Мои статьи</h2>
+
+    {% comment %} кнопка с маршрутом на добавление статьи {% endcomment %}
+    {% if perms.yoga.add_health or user.is_superuser %}
+    <div class="d-flex justify-content-start align-items-center mt-2 mb-3">
+    <a href="{% url 'yoga:add_health' %}" class="btn btn-info"><i class="bi bi-plus-circle me-2"></i>Создать статью</a>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-12">
+        {% comment %} Здесь мероприятия созданные пользователем {% endcomment %}
+
+            {% for health in healthes %}
+            {%include "yoga/include/health_detail.html" %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

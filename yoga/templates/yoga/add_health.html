@@ -1,0 +1,55 @@
+{% extends 'yoga/base.html' %}
+{% block content %}
+
+<h1 class="zagolovok-page mb-4">Добавить статью</h1>
+
+<div class="container-fluid bgfon">
+    <div class="row">
+        {% comment%}Колонка для формы редактирования {% endcomment%}
+        <div class="col-12 col-lg-6">
+
+            <form method="post" novalidate enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="alert alert-danger mt-1">{{ field.errors.as_text }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="mb-3">
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn btn-info mb-2">Добавить</button>
+            </form>
+        </div>
+
+
+        <div class="col-12 col-lg-6">
+
+            <h2 class="zagolovok-page">Подсказка</h2>
+            <p>Для добавления статьи заполните форму и нажмите кнопку "Отправить".</p>
+            <p>Поля формы:</p>
+            <ul>
+                <p>◾<strong>Тема статьи</strong> - обязательное поле, выберите тему статьи мероприятия из выпадающего списка.</p>
+                <p>◾ <strong>Описание</strong> - обязательное поле, внесите текст Вашей статьи.</p>
+                <p>◾<strong>Ссылка на дополнительную информацию</strong> - необязательное поле: можно добавить ссылку, ВАЖНО  чтобы она была
+                    в формате, например:  https://dzen.ru/shorts/668ccd63eef5a34342365e07
+                    и тогда на сайте отобразится ссылка на Дополнительную информацию для статьи.
+                </p>
+                <p>◾ <strong>Изображение</strong> - необязательное поле, если Вы хотите добавить изображение для вашего
+                    мероприятия, то загрузите его в формате jpg, jpeg, gif, png. Размер должен быть не более 300 КБ
+                </p>
+
+            </ul>
+            <p>После отправки формы, статья добавится на страницу сайта в зависимости от темы статьи".</p>
+
+
+        </div>
+    </div>
+
+    {% endblock %}

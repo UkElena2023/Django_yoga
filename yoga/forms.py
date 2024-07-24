@@ -1,5 +1,5 @@
 from django import forms
-from .models import Asana, YogaEvent, Category, YogaeventRequest
+from .models import Asana, YogaEvent, Category, YogaeventRequest, Health, Subject
 
 
 class AsanaForm(forms.ModelForm):
@@ -97,4 +97,35 @@ class YogaeventRequestForm(forms.ModelForm):
             raise forms.ValidationError(
                 'Необходимо ввести хотя бы один контакт: email или телефон.')
         return cleaned_data
+
+
+class HealthForm(forms.ModelForm):
+    subject = forms.ModelChoiceField(queryset=Subject.objects.all(), empty_label="Тема не выбрана",
+                                      label='Тема статьи', widget=forms.Select(attrs={'class': 'form-control'}))
+
+    image_text = forms.ImageField(
+        label='Изображение для статьи',
+        required=False
+    )
+
+    class Meta:
+        model = Health  # Указываем модель, с которой работает форма
+        # Указываем, какие поля должны присутствовать в форме и в каком порядке
+        fields = ['subject', 'name', 'description', 'link', 'image_text']
+        # Указываем виджеты для полей
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'cols': 40}),
+            'link': forms.TextInput(attrs={'class': 'form-control'}),
+            'time_event': forms.TextInput(attrs={'class': 'form-control'}),
+
+        }
+        # Указываем метки для полей
+        labels = {
+            'name': 'Название статьи',
+            'link': 'Ссылка доп.информацию для статьи',
+            'description': 'Описание',
+            'image_text': 'Изображение для статьи',
+
+        }
 

@@ -98,6 +98,7 @@ class UserPasswordResetForm(PasswordResetForm):
         widget=forms.TextInput(attrs={'class': 'form-control'})  # Использование Bootstrap класса
     )
 
+
 class UserPasswordResetConfirmForm(PasswordChangeForm):
     """
     Форма для ввода нового пароля после сброса.

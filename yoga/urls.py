@@ -11,6 +11,18 @@ urlpatterns = [
     path('shivanandayoga/', views.AboutShivanandaYoga.as_view(), name='shivanandayoga'),  # о шивананда йоге
     path('nidrayoga/', views.AboutNidraYoga.as_view(), name='nidrayoga'),  # о йоге нидре
 
+    ###### группа маршрутов для статей о здоровье
+    path('health_breath/', views.HealthBreathView.as_view(), name='health_breath'),  # статьи о дыхании
+    path('health_nutrition/', views.HealthNutritionView.as_view(), name='health_nutrition'),  # статьи о питании
+    path('health_ayurveda/', views.HealthAyurvedaView.as_view(), name='health_ayurveda'),  # статьи об аюрведе
+    path('health_yogatherapy/', views.HealthYogatherapyView.as_view(), name='health_yogatherapy'),  # статьи об йогатерапии
+    path('health_purification/', views.HealthPurificationView.as_view(), name='health_purification'),  # статьи об очищении
+    path('<int:pk>/edit_health/', views.EditHealthUpdateView.as_view(), name='edit_health'),
+    # Страница с формой редактирования статьи
+    path('<int:pk>/delete_health/', views.DeleteHealthView.as_view(), name='delete_health'),
+    # Страница с уведомлением об удалении статьи
+    path('add_health/', views.AddHealthCreateView.as_view(), name='add_health'),  # добавить мероприятие
+
     # остальные маршруты
     path('asanas/', views.AsanaCatalogView.as_view(), name='asanas'), # каталог асан
     path('asana/<int:pk>/toggle_favorite/', views.ToggleFavoriteView.as_view(), name='toggle_favorite'),

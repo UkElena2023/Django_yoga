@@ -42,7 +42,8 @@
         <div class="col container">
             <a class="navbar-brand navvert ms-2" href="{% url 'index' %}">Главная</a>
             {% comment%} кнопка для мобильных версий {% endcomment%}
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span></button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -53,6 +54,10 @@
                         <div class="dropdown-menu">
                             {% if perms.yoga.add_yogaevent or user.is_superuser %}
                             <a class="dropdown-item navvert prof" href="{% url 'users:profile_events' %}">Мои мероприятия</a>
+                            {% endif %}
+
+                            {% if perms.yoga.add_health or user.is_superuser %}
+                            <a class="dropdown-item navvert prof" href="{% url 'users:profile_health' %}">Мои статьи</a>
                             {% endif %}
 
                             <a class="dropdown-item navvert prof" href="{% url 'users:profile' %}">Изменить личные данные</a>
@@ -78,10 +83,18 @@
     </nav>
 <div class="row">
     <nav class="col-md-auto nav flex-column">
-       <a class="nav-link navvert" href="{% url 'about' %}">Стили йоги</a>
+        <a class="nav-link navvert" href="{% url 'about' %}">Стили йоги</a>
+        <a class="nav-link navvert" href="{% url 'advice' %}">Советы начинающим</a>
         <a class="nav-link navvert" href="{% url 'yoga:asanas' %}">Асаны</a>
+        <a class="nav-link navvert" href="{% url 'yoga:health_breath' %}">Дыхание</a>
+        <a class="nav-link navvert" href="{% url 'yoga:health_nutrition' %}">Питание</a>
+        <a class="nav-link navvert" href="{% url 'yoga:health_yogatherapy' %}">Йогатерапия</a>
+        <a class="nav-link navvert" href="{% url 'yoga:health_ayurveda' %}">Аюрведа</a>
+        <a class="nav-link navvert" href="{% url 'yoga:health_purification' %}">Очищение</a>
         <a class="nav-link navvert" href="{% url 'yoga:events' %}">Мероприятия</a>
         <a class="nav-link navvert" href="{% url 'yoga:back_contact' %}">Обратная связь</a>
+
+
     </nav>
 
     <main class="col py-2">

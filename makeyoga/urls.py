@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexView.as_view(), name='index'), # главная
     path('about/', views.AboutView.as_view(), name='about'), # стили йоги
+    path('advice/', views.AdviceView.as_view(), name='advice'), # советы начинающим
     # Маршруты подключенные из приложения yoga
     path('yoga/', include('yoga.urls')),
     # Маршруты подключенные из приложения users

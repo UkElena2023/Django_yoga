@@ -26,6 +26,8 @@ urlpatterns = [
     path("profile_events/", views.UserYogaEventView.as_view(), name='profile_events'),
     # маршрут для страницы избранных асан пользователя
     path("profile_asanas/", views.UserFavoritAsanasView.as_view(), name='profile_asanas'),
+    # маршрут для страницы со статьями пользователя
+    path("profile_health/", views.UserHealthView.as_view(), name='profile_health'),
 
 
 ####### группа маршрутов для Восстановление пароля

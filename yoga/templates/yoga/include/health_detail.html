@@ -1,0 +1,38 @@
+{% comment %} Статья о здоровье /templates/yoga/include/health_detail.html {% endcomment %}
+
+{% comment %} здесь код для отображения текста статьи {% endcomment %}
+<div class="card mb-3 bgasanadetail">
+  <div class="row g-0">
+
+
+{% comment %} здесь код для отражения статьи {% endcomment %}
+      <div class="col-md-12">
+        <div class="card-body">
+
+          {% comment %} здесь код для кнопок редактирования и удаления {% endcomment %}
+            {% if user == health.author or user.is_superuser %}
+            <div class="d-flex justify-content-end align-items-center mt-2">
+            <a href="{% url 'yoga:edit_health' health.pk %}" class="btn btn-info ms-3"><i class="bi bi-pencil-square"></i></a>
+            <a href="{% url 'yoga:delete_health' health.pk %}" class="btn btn-danger ms-3"><i class="bi bi-trash-fill"></i></a>
+            </div>
+          {% endif %}
+
+        {% comment %} здесь код изображения для статьи {% endcomment %}
+            {% if health.image_text %}
+            <img align="left" class="img-fluid health-img ms-3 mt-2" src="{{ health.image_text.url }}" alt="Тут изображение для статьи">
+            {% endif %}
+
+        {% comment %} здесь код текста для статьи {% endcomment %}
+            <h1 align="start" class="card-title main-list fst-italic">{{ health.name }}</h1>
+            <p class="card-text"> {{ health.description | linebreaks }}</p>
+
+        {% comment %} здесь код добавления ссылки на доп.информацию к статье {% endcomment %}
+            {% if health.link %}
+                <p class="card-text fst-italic"><a href="{{health.link}}" target="dop_info_plase" class="text-decoration-none">Дополнительная информация по теме  👉</a></p>
+            {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</div>

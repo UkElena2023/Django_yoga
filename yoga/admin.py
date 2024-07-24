@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Asana, YogaEvent, YogaeventRequest
+from .models import Asana, YogaEvent, YogaeventRequest, Health
 
 
 @admin.register(Asana)
@@ -75,3 +75,30 @@ class YogaEventRequestAdmin(admin.ModelAdmin):
     # Поля, которые можно редактировать
     list_editable = ('first_name', 'email', 'phone', 'comment')
     fields = ['first_name', 'email', 'phone', 'comment', 'created_at']
+
+
+@admin.register(Health)
+class HealthAdmin(admin.ModelAdmin):
+    # Поля, которые будут отображаться в админке
+    list_display = (
+        'id', 'subject', 'name', 'description', 'text_image', 'upload_date', 'link')
+    # Поля, которые будут ссылками
+    list_display_links = ('id',)
+    # Поля по которым будет поиск
+    search_fields = ('name', 'description')
+    # Поля по которым будет фильтрация
+    list_filter = ('subject', 'upload_date')
+    # Ordering - сортировка
+    ordering = ('upload_date',)
+    # List_per_page - количество элементов на странице
+    list_per_page = 10
+    # Поля, которые можно редактировать
+    list_editable = ('name', 'description', 'link')
+    fields = ['subject', 'name', 'description', 'image_text', 'link']
+
+    @admin.display(description="Изображение мероприятия")
+    def text_image(self, health: Health):
+        if health.image_text:
+            return mark_safe(f'<img src="{health.image_text.url}" width="96">')
+        else:
+            return 'Без изображения'

@@ -87,3 +87,29 @@ class YogaeventRequest(models.Model):
 
     def __str__(self):
         return f"Запись от: {self.first_name} {self.created_at}"
+
+
+class Health(models.Model):
+    name = models.CharField(max_length=80, db_column='Name', verbose_name='Название статьи')
+    description = models.TextField(max_length=10000, db_column='Description', verbose_name='Описание')
+    link = models.TextField(max_length=250, default=None, blank=True, null=True, db_column='Link',
+                            verbose_name='Ссылка')
+    image_text = models.ImageField(upload_to='yoga/images/%Y/%m/%d/', default=None, blank=True, null=True,
+                                   db_column='Image', verbose_name='Изображение асаны')
+    upload_date = models.DateTimeField(auto_now_add=True, db_column='UploadDate', verbose_name='Дата создания')
+    status = models.BooleanField(default=True, db_column='Status', verbose_name='Статус')
+    subject = models.ForeignKey('Subject', on_delete=models.CASCADE, verbose_name='Тема статьи')
+    author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='health', null=True,
+                               default=None, verbose_name='Автор')
+
+
+class Subject(models.Model):
+    name = models.CharField(max_length=100, db_column='Name')
+
+    class Meta:
+        db_table = 'Subjects'
+        verbose_name = 'Тема'
+        verbose_name_plural = 'Темы'
+
+    def __str__(self):
+        return f'Тема {self.name}'

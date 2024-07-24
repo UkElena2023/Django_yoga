@@ -13,7 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from users.forms import LoginUserForm, RegisterUserForm, ProfileUserForm, UserPasswordChangeForm, \
     UserPasswordResetConfirmForm, UserPasswordResetForm
 
-from yoga.models import YogaEvent, Asana
+from yoga.models import YogaEvent, Asana, Health
 
 
 class LoginUser(LoginView):
@@ -132,6 +132,23 @@ class UserYogaEventView(ListView):
         Метод для получения мероприятий пользователя с помощью фильтра по автору и сортировки по дате загрузки
         """
         return YogaEvent.objects.filter(author=self.request.user).order_by('-upload_date')
+
+
+class UserHealthView(ListView):
+    """
+    Класс для отображения всех статей пользователя. Наследуется от ListView.
+    Переопределяет метод get_queryset для получения статей пользователя
+    """
+    model = Health
+    template_name = 'users/profile_health.html'
+    context_object_name = 'healthes'
+    extra_context = {'title': 'Мои статьи'}
+
+    def get_queryset(self):
+        """
+        Метод для получения статей пользователя с помощью фильтра по автору и сортировки по дате загрузки
+        """
+        return Health.objects.filter(author=self.request.user).order_by('-upload_date')
 
 
 class UserFavoritAsanasView(ListView):
