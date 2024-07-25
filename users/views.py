@@ -142,6 +142,7 @@ class UserHealthView(ListView):
     model = Health
     template_name = 'users/profile_health.html'
     context_object_name = 'healthes'
+    paginate_by = 10  # Количество объектов на странице
     extra_context = {'title': 'Мои статьи'}
 
     def get_queryset(self):

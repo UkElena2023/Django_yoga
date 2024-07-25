@@ -11,6 +11,38 @@
     <a href="{% url 'yoga:add_health' %}" class="btn btn-info"><i class="bi bi-plus-circle me-2"></i>Создать статью</a>
     </div>
     {% endif %}
+
+    {% comment %}   Paginator статей {% endcomment %}
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <nav aria-label="Page navigation" class="text-dark mt-3">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item pagination">
+                                      <a class="page-link btn-info"
+                                   href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+
+                            </li>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                            <li class="page-item btn-info {% if page_obj.number == num %}active{% endif %}">
+                               <a class="page-link text-dark"
+                                   href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link text-dark btn-info" href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
     <div class="row">
         <div class="col-12">
         {% comment %} Здесь мероприятия созданные пользователем {% endcomment %}
@@ -21,5 +53,7 @@
 
         </div>
     </div>
+
+
 </div>
 {% endblock %}

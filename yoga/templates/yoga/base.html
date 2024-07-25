@@ -81,26 +81,37 @@
         </div>
 
     </nav>
+    {% comment%}Вертикальное меню{%endcomment%}
 <div class="row">
     <nav class="col-md-auto nav flex-column">
         <a class="nav-link navvert" href="{% url 'about' %}">Стили йоги</a>
         <a class="nav-link navvert" href="{% url 'advice' %}">Советы начинающим</a>
         <a class="nav-link navvert" href="{% url 'yoga:asanas' %}">Асаны</a>
-        <a class="nav-link navvert" href="{% url 'yoga:health_breath' %}">Дыхание</a>
-        <a class="nav-link navvert" href="{% url 'yoga:health_nutrition' %}">Питание</a>
-        <a class="nav-link navvert" href="{% url 'yoga:health_yogatherapy' %}">Йогатерапия</a>
-        <a class="nav-link navvert" href="{% url 'yoga:health_ayurveda' %}">Аюрведа</a>
-        <a class="nav-link navvert" href="{% url 'yoga:health_purification' %}">Очищение</a>
         <a class="nav-link navvert" href="{% url 'yoga:events' %}">Мероприятия</a>
         <a class="nav-link navvert" href="{% url 'yoga:back_contact' %}">Обратная связь</a>
 
+        <a class="nav-link dropdown-toggle navvert" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Здоровье
+          </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item nav-link navvert" href="{% url 'yoga:health_breath' %}">Дыхание</a></li>
+            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_nutrition' %}">Питание</a></li>
+            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_yogatherapy' %}">Йогатерапия</a></li>
+            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_ayurveda' %}">Аюрведа</a></li>
+            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_purification' %}">Очищение</a></li>
+            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_nutrition' %}">Питание</a></li>
 
-    </nav>
+          </ul>
+
+</nav>
+
+
 
     <main class="col py-2">
        {% block content %}{% endblock %}
     </main>
     </div>
+
 
     <footer class="p-3 mt-auto">
          {% block footer %}{% endblock %}
