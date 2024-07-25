@@ -125,6 +125,7 @@ class UserYogaEventView(ListView):
     model = YogaEvent
     template_name = 'users/profile_events.html'
     context_object_name = 'yogaevents'
+    paginate_by = 10  # Количество объектов на странице
     extra_context = {'title': 'Мои мероприятия'}
 
     def get_queryset(self):
