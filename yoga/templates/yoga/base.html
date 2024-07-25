@@ -81,7 +81,8 @@
         </div>
 
     </nav>
-    {% comment%}Вертикальное меню{%endcomment%}
+
+{% comment%}Вертикальное меню{%endcomment%}
 <div class="row">
     <nav class="col-md-auto nav flex-column">
         <a class="nav-link navvert" href="{% url 'about' %}">Стили йоги</a>
@@ -90,6 +91,7 @@
         <a class="nav-link navvert" href="{% url 'yoga:events' %}">Мероприятия</a>
         <a class="nav-link navvert" href="{% url 'yoga:back_contact' %}">Обратная связь</a>
 
+        {% comment%}разделы о здоровье свернуты{%endcomment%}
         <a class="nav-link dropdown-toggle navvert" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Здоровье
           </a>
@@ -99,11 +101,8 @@
             <li><a class="dropdown-item navvert" href="{% url 'yoga:health_yogatherapy' %}">Йогатерапия</a></li>
             <li><a class="dropdown-item navvert" href="{% url 'yoga:health_ayurveda' %}">Аюрведа</a></li>
             <li><a class="dropdown-item navvert" href="{% url 'yoga:health_purification' %}">Очищение</a></li>
-            <li><a class="dropdown-item navvert" href="{% url 'yoga:health_nutrition' %}">Питание</a></li>
-
-          </ul>
-
-</nav>
+        </ul>
+    </nav>
 
 
 
