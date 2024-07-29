@@ -1,6 +1,15 @@
 {% extends "yoga/base.html" %}
 {% load static %}
-
+{% block head %}
+<meta name="description" content="Статьи, заметки, блог про йогатерапию на сайте Собери Свою Йогу. Полезная и познавательная информация для каждого человека.">
+<meta property="og:title" content="Блог про йогатерапию - Собери Свою Йогу">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Статьи, заметки, блог про йогатерапию на сайте Собери Свою Йогу. Полезная и познавательная информация для каждого человека.">
+<meta property="og:site_name" content="makeyoga.ru">
+<meta property="og:image" content="{% static 'yoga/img/logo_new1.png' %}">
+<meta property="og:url" content="https://makeyoga.ru/yoga/health_yogatherapy/">
+<meta property="og:locale" content="ru_RU">
+{% endblock %}
 {% block content %}
 <div class="container">
     <h1 align="end" class="zagolovok-page mb-5">Блог про йогатерапию</h1>

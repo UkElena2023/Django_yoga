@@ -71,7 +71,7 @@ class YogaeventRequest(models.Model):
     first_name = models.CharField(max_length=50)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=20)
-    comment = models.TextField(blank=True, null=True)
+    comment = models.TextField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

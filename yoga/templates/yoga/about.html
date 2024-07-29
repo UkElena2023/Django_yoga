@@ -1,13 +1,24 @@
 {% extends 'yoga/base.html' %}
 {% load static %}
+{% block head %}
+<meta name="description" content="На странице собрана информация по основным стилям, которые практикуют в йога центрах России.">
+<meta property="og:title" content="Стили йоги - Собери Свою Йогу">
+<meta property="og:type" content="article">
+<meta property="og:description" content="На странице собрана информация по основным стилям, которые практикуют в йога центрах России.">
+<meta property="og:site_name" content="makeyoga.ru">
+<meta property="og:image" content="{% static 'yoga/img/logo_new1.png' %}">
+<meta property="og:url" content="https://makeyoga.ru/about/">
+<meta property="og:locale" content="ru_RU">
+{% endblock %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-12">
             <h1 class="zagolovok-page">Cтили йоги</h1>
-            <p align="justify" class="main-list mb-4 mt-4">Сегодня йога центры предлагают большое количество различных стилей, методов и направлений йоги. В таком разнообразии
-    стилей трудно разобраться не только новичку, но даже опытному йогину. В данном разделе вы сможете найти информацию
-    по основным стилям, направлениям, которые практикуют в йога центрах России. Тем, кто сейчас
+            <p align="justify" class="main-list mb-4 mt-4">В настоящее время йога центры и фитнес-клубы предлагают большое
+                количество различных стилей и направлений йоги. В таком разнообразии трудно разобраться
+                не только новичку, но даже опытному йогину. В данном разделе вы сможете найти информацию
+    по основным стилям, которые практикуют в йога центрах. Тем, кто сейчас
     выбирает стиль йоги для будущей практики, советую ознакомиться с основными стилями и их особенностями.</p>
         </div>
     </div>

@@ -1,6 +1,15 @@
 {% extends "yoga/base.html" %}
 {% load static %}
-
+{% block head %}
+<meta name="description" content="Информация о мероприятиях, онлайн занятиях, семинарах которые проводит инструктор по йоге Елена Московкина.">
+<meta property="og:title" content="Каталог асан - Собери Свою Йогу">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Информация о мероприятиях, онлайн занятиях, семинарах которые проводит инструктор по йоге Елена Московскина.">
+<meta property="og:site_name" content="makeyoga.ru">
+<meta property="og:image" content="{% static 'yoga/img/logo_new1.png' %}">
+<meta property="og:url" content="https://makeyoga.ru/yoga/events/">
+<meta property="og:locale" content="ru_RU">
+{% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="zagolovok-page mb-5">Будущие мероприятия</h1>

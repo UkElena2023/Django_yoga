@@ -89,11 +89,14 @@ class IndexView(TemplateView):
 
 
 class HealthBreathView(ListView):
+    """
+    Класс для отображения страницы Блог про дыхание со статьями
+    """
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_breath.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
-    extra_context = {'title': 'Заметки о дыхании'}  # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Блог про дыхание'}  # Дополнительный контекст для передачи в шаблон
 
     def get_queryset(self):
         """
@@ -116,11 +119,14 @@ class HealthBreathView(ListView):
 
 
 class HealthNutritionView(ListView):
+    """
+    Класс для отображения страницы Блог про питание со статьями
+    """
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_nutrition.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
-    extra_context = {'title': 'Заметки о питании'}  # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Блог про питание'}  # Дополнительный контекст для передачи в шаблон
 
     def get_queryset(self):
         """
@@ -143,11 +149,14 @@ class HealthNutritionView(ListView):
 
 
 class HealthAyurvedaView(ListView):
+    """
+    Класс для отображения страницы Блог про аюрведу со статьями
+    """
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_ayurveda.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
-    extra_context = {'title': 'Заметки об аюрведе'}  # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Блог про аюрведу'}  # Дополнительный контекст для передачи в шаблон
 
     def get_queryset(self):
         """
@@ -170,11 +179,14 @@ class HealthAyurvedaView(ListView):
 
 
 class HealthYogatherapyView(ListView):
+    """
+    Класс для отображения страницы Блог про йогатерапию со статьями
+    """
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_yogatherapy.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
-    extra_context = {'title': 'Заметки о йогатерапии'}  # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Блог про йогатерапию'}  # Дополнительный контекст для передачи в шаблон
 
     def get_queryset(self):
         """
@@ -197,11 +209,14 @@ class HealthYogatherapyView(ListView):
 
 
 class HealthPurificationView(ListView):
+    """
+    Класс для отображения страницы Блог про очищение со статьями
+    """
     model = Health  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/health_purification.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'healthes'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 7  # Количество объектов на странице
-    extra_context = {'title': 'Заметки об очищении'}  # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Блог про очищение'}  # Дополнительный контекст для передачи в шаблон
 
 
     def get_queryset(self):
@@ -291,6 +306,7 @@ class AsanaCatalogView(ListView):
     template_name = 'yoga/asanas.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'asanas'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 10  # Количество объектов на странице
+    extra_context = {'title': 'Каталог асан'}  # Дополнительный контекст для передачи в шаблон
 
     # Метод для модификации начального запроса к БД
     def get_queryset(self):
@@ -321,7 +337,6 @@ class AsanaCatalogView(ListView):
 class AsanaDetailView(DetailView):
     """
     Класс для детального представления асаны.
-    Используется класс-миксин для добавления меню в контекст шаблона страницы для детального отображения карточки
     """
     # указываем модель для представления
     model = Asana
@@ -329,6 +344,7 @@ class AsanaDetailView(DetailView):
     template_name = 'yoga/asana_detail.html'
     # Переопределяем имя переменной в контексте шаблона на 'asana' (до этого было 'asanas')
     context_object_name = 'asana'
+    extra_context = {'title': 'Асана'}  # Дополнительный контекст для передачи в шаблон
 
     def get_object(self, queryset=None):
         """
@@ -359,6 +375,7 @@ class YogaEventCatalogView(ListView):
     model = YogaEvent  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'yoga/events.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'yogaevents'  # Имя переменной контекста, которую будем использовать в шаблоне
+    extra_context = {'title': 'Мероприятия'}  # Дополнительный контекст для передачи в шаблон
 
     def get_queryset(self):
         # Получение параметров сортировки из GET-запроса
@@ -430,6 +447,8 @@ class YogaEventDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class BackContactView(View):
+    extra_context = {'title': 'Контакты для обратной связи'}  # Дополнительный контекст для передачи в шаблон
+
     def get(self, request):
         form = YogaeventRequestForm()
         return render(request, 'yoga/back_contact.html', {'form': form})

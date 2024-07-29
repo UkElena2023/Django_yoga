@@ -1,5 +1,17 @@
 {% extends 'yoga/base.html' %}
 {% load static %}
+{% block head %}
+<meta name="description" content="Описание стиля Нидра йога, основатель Сарасвати Свами Сатьянанда, Йога нидра призвана омолаживать, и
+                возрождать физический, ментальный и эмоциональный аспекты личности.">
+<meta property="og:title" content="Нидра йога - Собери Свою Йогу">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Описание стиля Нидра йога, основатель Сарасвати Свами Сатьянанда, Йога нидра призвана омолаживать, и
+                возрождать физический, ментальный и эмоциональный аспекты личности.">
+<meta property="og:site_name" content="makeyoga.ru">
+<meta property="og:image" content="{% static 'yoga/img/logo_new1.png' %}">
+<meta property="og:url" content="https://makeyoga.ru/yoga/nidrayoga/">
+<meta property="og:locale" content="ru_RU">
+{% endblock %}
 {% block content %}
 <div class="container">
 
@@ -11,7 +23,7 @@
                          src="{% static 'yoga/img/нидра1.jpg' %}" alt="Фото нидра1">
                 </div>
                 <div class="col-4 d-flex justify-content-center align-items-center">
-                    <h1 class="zagolovok-page">Йога Нидра</h1>
+                    <h1 align="center" class="zagolovok-page">Йога Нидра</h1>
                 </div>
                 <div class="col-4 d-flex justify-content-center align-items-center">
                     <img class="img-fluid foto-styleyoga me-4 mt-4"
