@@ -15,16 +15,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import AsanaSitemap
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
+
 from yoga import views
 from django.conf import settings
 from django.conf.urls.static import static
+
+sitemaps = {
+    'asana': AsanaSitemap,
+    }
 
 urlpatterns = [
     # Админка
     path('admin/', admin.site.urls),
     path('', views.IndexView.as_view(), name='index'), # главная
+    # для поисковиков
+    re_path(r'^robots\.txt$', TemplateView.as_view(template_name="yoga/robots.txt", content_type='text/plain')),
+    re_path(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    re_path(r'^yandex_25abbda5384e921f\.html$', TemplateView.as_view(template_name="yoga/yandex_25abbda5384e921f.html")),
+
+    # остальные страницы
     path('about/', views.AboutView.as_view(), name='about'), # стили йоги
     path('advice/', views.AdviceView.as_view(), name='advice'), # советы начинающим
     # Маршруты подключенные из приложения yoga

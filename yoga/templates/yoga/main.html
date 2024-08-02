@@ -1,6 +1,7 @@
 {% extends 'yoga/base.html' %}
 {% load static %}
 {% block head %}
+<meta name="yandex-verification" content="25abbda5384e921f"/>
 <meta name="description" content="Сайт преподавателя йоги Елены Московкиной, онлайн-занятия, организация выездных йога мероприятий как для новичков, так и для опытных практиков.">
 <meta property="og:title" content="Главная траница - Собери Свою Йогу">
 <meta property="og:type" content="article">
@@ -78,6 +79,34 @@
         </button>
 
     </div>
+</div>
 
+<h1 class="zagolovok-page mt-4">Фотографии с мероприятий</h1>
+{% comment %}Фотогалерея{% endcomment %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid foto-teacher mt-4"
+                 src="{% static 'yoga/img/photo1.jpeg' %}" alt="Фото1_галерея">
+        </div>
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid foto-teacher mt-4"
+                 src="{% static 'yoga/img/photo4.jpg' %}" alt="Фото2_галерея">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid foto-teacher mt-4"
+                 src="{% static 'yoga/img/photo3.jpeg' %}" alt="Фото3_галерея">
+        </div>
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid foto-teacher mt-4"
+                 src="{% static 'yoga/img/photo2.jpeg' %}" alt="Фото4_галерея">
+        </div>
+    </div>
+    <div class="col-12 col-lg-4 styleyoga">
+        <a href="https://t.me/nashiretriti" target="Teacher_tme_photo" class="main-list mb-4 mt-4">Больше фотографий 👉</a>
+    </div>
 </div>
 {% endblock %}

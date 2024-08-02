@@ -30,7 +30,7 @@ if DEBUG:
     INTERNAL_IPS = [
         '127.0.0.1',
     ]
-
+SITE_ID = 1
 # ALLOWED_HOSTS - это список хостов, которые могут обращаться к нашему сайту
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['makeyoga.ru', 'www.makeyoga.ru', 'localhost', '127.0.0.1']
@@ -50,9 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'debug_toolbar',
     'yoga.apps.YogaConfig',
     'users.apps.UsersConfig',
+
 ]
 
 MIDDLEWARE = [
