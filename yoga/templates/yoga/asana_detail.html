@@ -1,12 +1,15 @@
 {% extends "yoga/base.html" %}
 {% load static %}
+{% block title %}Асана {{ asana.title }}{% endblock %}
 {% block head %}
 <meta name="description" content="Подробная информация об асане {{ asana.title }}, с описанием техники выполнения, противопоказаниям и терапевтическому эффекту при регулярном выполнении.">
 <meta property="og:title" content="Асана {{ asana.title }} - Собери Свою Йогу">
 <meta property="og:type" content="article">
 <meta property="og:description" content="Подробная информация об асане {{ asana.title }}, с описанием техники выполнения, противопоказаниям и терапевтическому эффекту при регулярном выполнении.">
 <meta property="og:site_name" content="makeyoga.ru">
-<meta property="og:image" content="{% static 'yoga/img/logo_new1.png' %}">
+<meta property="og:image" content="https://makeyoga.ru/static/yoga/img/logo_new1.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="901">
 <meta property="og:url" content="https://makeyoga.ru/yoga/{{asana.pk}}/detail/">
 <meta property="og:locale" content="ru_RU">
 {% endblock %}
