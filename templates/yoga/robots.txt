@@ -1,3 +1,4 @@
 user-agent: *
 Disallow: /admin/
 Disallow: /accounts/
+#Sitemap: http://example.com/sitemap
